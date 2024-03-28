@@ -544,7 +544,10 @@ void WLED::initAP(bool resetAP)
   }
   DEBUG_PRINT(F("Opening access point "));
   DEBUG_PRINTLN(apSSID);
-  WiFi.softAPConfig(IPAddress(4, 3, 2, 1), IPAddress(4, 3, 2, 1), IPAddress(255, 255, 255, 0));
+  uint8_t ipOct1, ipOct2, ipOct3, ipOct4, maskOct1, maskOct2, maskOct3, maskOct4;
+  sscanf(WLED_AP_IP_ADDR, "%hhu.%hhu.%hhu.%hhu", &ipOct1, &ipOct2, &ipOct3, &ipOct4);
+  sscanf(WLED_AP_IP_NETMASK, "%hhu.%hhu.%hhu.%hhu", &maskOct1, &maskOct2, &maskOct3, &maskOct4);
+  WiFi.softAPConfig(IPAddress(ipOct1, ipOct2, ipOct3, ipOct4), IPAddress(ipOct1, ipOct2, ipOct3, ipOct4), IPAddress(maskOct1, maskOct2, maskOct3, maskOct4));
   WiFi.softAP(apSSID, apPass, apChannel, apHide);
   #if defined(LOLIN_WIFI_FIX) && (defined(ARDUINO_ARCH_ESP32C3) || defined(ARDUINO_ARCH_ESP32S2) || defined(ARDUINO_ARCH_ESP32S3))
   WiFi.setTxPower(WIFI_POWER_8_5dBm);

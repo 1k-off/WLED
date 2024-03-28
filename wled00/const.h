@@ -8,11 +8,13 @@
 #define GRADIENT_PALETTE_COUNT 58
 
 //Defaults
-#define DEFAULT_CLIENT_SSID "Your_Network"
-#define DEFAULT_AP_SSID     "WLED-AP"
-#define DEFAULT_AP_PASS     "wled1234"
-#define DEFAULT_OTA_PASS    "wledota"
-#define DEFAULT_MDNS_NAME   "x"
+#define DEFAULT_CLIENT_SSID    "Your_Network"
+#define DEFAULT_AP_SSID        "WLED-AP"
+#define DEFAULT_AP_PASS        "wled1234"
+#define DEFAULT_OTA_PASS       "wledota"
+#define DEFAULT_MDNS_NAME      "x"
+#define DEFAULT_AP_IP_ADDR     "192.168.168.1"
+#define DEFAULT_AP_IP_NETMASK  "255.255.255.0"
 
 //increase if you need more
 #ifndef WLED_MAX_USERMODS

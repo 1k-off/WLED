@@ -205,6 +205,14 @@ using PSRAMDynamicJsonDocument = BasicJsonDocument<PSRAM_Allocator>;
   #define WLED_AP_PASS DEFAULT_AP_PASS
 #endif
 
+#ifndef WLED_AP_IP_ADDR
+  #define WLED_AP_IP_ADDR DEFAULT_AP_IP_ADDR
+#endif
+
+#ifndef WLED_AP_IP_NETMASK
+  #define WLED_AP_IP_NETMASK DEFAULT_AP_IP_NETMASK
+#endif
+
 #ifndef SPIFFS_EDITOR_AIRCOOOKIE
   #error You are not using the Aircoookie fork of the ESPAsyncWebserver library.\
   Using upstream puts your WiFi password at risk of being served by the filesystem.\
